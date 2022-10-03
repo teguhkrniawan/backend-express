@@ -1,0 +1,40 @@
+// Create user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Teguh Kurniawan",
+    "email": "teguh@gmail.com",
+    "password": "password",
+    "confPassword": "password",
+    "role": "user"
+}
+
+###
+// get all user
+GET http://localhost:5000/users
+Content-Type: application/json
+
+###
+// get id user
+GET http://localhost:5000/users/cb8f48fe-7b63-4ad6-bcad-0293497b72d5
+Content-Type: application/json
+
+
+###
+// update user
+PATCH http://localhost:5000/users/cb8f48fe-7b63-4ad6-bcad-0293497b72d5
+Content-Type: application/json
+
+{
+    "name": "Teguh Kurnia",
+    "email": "teguh@gmail.com",
+    "password": "",
+    "confPassword": "",
+    "role": "user"
+}
+
+###
+// delete user
+DELETE http://localhost:5000/users/4a799242-c33b-4bef-9b88-51b2e4150334
+

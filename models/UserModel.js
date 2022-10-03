@@ -39,8 +39,7 @@ const Users = db.define('users', {
         type: DataTypes.STRING,
         allowNull: false,
         validate:{
-            noEmpty: true,
-            isEmail: true
+            notEmpty: true,
         }
     }
 }, {freezeTableName: true})
