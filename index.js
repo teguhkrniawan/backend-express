@@ -5,6 +5,7 @@ import dotEnv from "dotenv";
 import db from "./config/Database.js";
 import UserRoute from "./routes/UserRoute.js";
 import ProductRoute from "./routes/ProductRoute.js";
+import AuthRoute from "./routes/AuthRoute.js";
 
 dotEnv.config();
 const app = express();
@@ -36,6 +37,7 @@ app.use(express.json());
 // agar bisa menggunakan routing
 app.use(UserRoute);
 app.use(ProductRoute);
+app.use(AuthRoute);
 
 app.listen(process.env.APP_PORT, () => {
     console.log('Server backend sedang running...')
