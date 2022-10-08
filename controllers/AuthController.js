@@ -14,7 +14,7 @@ export const login = async(req, res) => {
 
     // mathcing ?
     const match = await argon2.verify(user.password, req.body.password);
-    if(!match) return res.status(400).json({
+    if(!match) return res.status(404).json({
         msg: "Gagal login!"
     })
 
