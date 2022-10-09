@@ -32,15 +32,14 @@ const Products = db.define('products', {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate:{
-            noEmpty: true,
-            isEmail: true
+            notEmpty: true,
         }
     }
 }, {freezeTableName: true})
 
 Users.hasMany(Products);
-// Products.belongsTo(Users, {
-//     foreignKey: 'usersId'
-// })
+Products.belongsTo(Users, {
+    foreignKey: 'userId'
+})
 
 export default Products;

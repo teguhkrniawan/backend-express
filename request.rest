@@ -45,7 +45,7 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email" : "gaddih@gmail.com",
+    "email" : "admin@gmail.com",
     "password":  "password"
 }
 
@@ -56,3 +56,21 @@ DELETE http://localhost:5000/logout
 ###
 // get my profile
 GET http://localhost:5000/me
+
+###
+// get all products
+GET http://localhost:5000/products
+
+### 
+// add products
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name": "Laptop Axioo",
+    "price": 10735000
+}
+
+###
+// delete products
+DELETE http://localhost:5000/products/f443ef24-8700-4fcd-b453-25b75f974e7f
