@@ -1,5 +1,7 @@
 import UserModel from "../models/UserModel.js";
 import argon2 from "argon2";
+import sequelize from "sequelize";
+import db from "../config/Database.js"
 
 // get all Users
 export const getUser = async(req, res) => {
@@ -135,6 +137,15 @@ export const deleteUser = async(req, res) => {
             msg: error.message
         })
     }
+}
 
+// jumlah user
+export const totalUser = async(req, res) => {
+    try {
+        const response = await db.query('SELECT COUNT(id) as jlh FROM users');
+        return res.status(200).json(response)
 
+    } catch (error) {
+        return res.status(404).json({msg: error.message})
+    }
 }

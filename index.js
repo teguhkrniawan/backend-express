@@ -15,11 +15,11 @@ const app = express();
 const sessionStore = SequelizeStore(session.Store);
 const store = new sessionStore({
     db: db
-})
+});
 
-// (async() => [
-//     await db.sync()
-// ])();
+// (async() => {
+//     await db.sync();
+// })();
 
 // session
 app.use(session({
@@ -33,11 +33,16 @@ app.use(session({
 }));
 
 // agar bisa diakses oleh domain tertentu
+// app.use(cors({
+    // credentials: true,
+    // origin: "*" // aoabila ingin lebih dari 1 domain
+    // origin: 'http://localhost:3000'
+// }))
+
 app.use(cors({
-    credentials: true,
-    // origin: [] // aoabila ingin lebih dari 1 domain
-    origin: 'http://localhost:3000'
-}))
+    origin: true,
+    credentials: true
+}));
 
 // agar menerima data dalam JSON
 app.use(express.json());

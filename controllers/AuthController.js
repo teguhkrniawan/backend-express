@@ -33,11 +33,11 @@ export const login = async(req, res) => {
     const role = user.role
 
     res.status(200).json({
-        uuid,
-        name,
-        email,
-        role
-    })
+            uuid,
+            name,
+            email,
+            role
+        })
 }
 
 export const logout = async(req, res) => {

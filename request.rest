@@ -1,29 +1,29 @@
 // Create user
-POST http://localhost:5000/users
+POST http://localhost:3002/users
 Content-Type: application/json
 
 {
-    "name": "Galih",
-    "email": "galih@gmail.com",
+    "name": "Admin",
+    "email": "admin@gmail.com",
     "password": "password",
     "confPassword": "password",
-    "role": "user"
+    "role": "admin"
 }
 
 ###
 // get all user
-GET http://localhost:5000/users
+GET http://localhost:3002/users
 Content-Type: application/json
 
 ###
 // get id user
-GET http://localhost:5000/users/cb8f48fe-7b63-4ad6-bcad-0293497b72d5
+GET http://localhost:3002/users/cb8f48fe-7b63-4ad6-bcad-0293497b72d5
 Content-Type: application/json
 
 
 ###
 // update user
-PATCH http://localhost:5000/users/cb8f48fe-7b63-4ad6-bcad-0293497b72d5
+PATCH http://localhost:3002/users/cb8f48fe-7b63-4ad6-bcad-0293497b72d5
 Content-Type: application/json
 
 {
@@ -36,41 +36,60 @@ Content-Type: application/json
 
 ###
 // delete user
-DELETE http://localhost:5000/users/4a799242-c33b-4bef-9b88-51b2e4150334
+DELETE http://localhost:3002/users/4a799242-c33b-4bef-9b88-51b2e4150334
 
 
 ###
 // login
-POST http://localhost:5000/login
+POST http://localhost:3002/login
 Content-Type: application/json
 
 {
-    "email" : "admin@gmail.com",
+    "email" : "galih@gmail.com",
     "password":  "password"
 }
 
 ###
 // logout
-DELETE http://localhost:5000/logout
+DELETE http://localhost:3002/logout
 
 ###
 // get my profile
-GET http://localhost:5000/me
+GET http://localhost:3002/me
 
 ###
 // get all products
-GET http://localhost:5000/products
+GET http://localhost:3002/products
 
 ### 
 // add products
-POST http://localhost:5000/products
+POST http://localhost:3002/products
 Content-Type: application/json
 
 {
     "name": "Laptop Axioo",
-    "price": 10735000
+    "price": 10733002
 }
 
 ###
 // delete products
-DELETE http://localhost:5000/products/f443ef24-8700-4fcd-b453-25b75f974e7f
+DELETE http://localhost:3002/products/a9b7d7da-396b-43c2-b1ea-3ccf8c257aaf
+
+
+###
+// update product
+PATCH http://localhost:3002/products/6b7f059e-efb0-47e3-833c-581455a3f71f
+Content-Type: application/json
+
+{
+    "name" : "laptop baru",
+    "price": 0
+}
+
+### product id
+GET http://localhost:3002/products/89f814a4-8aa4-4e87-b162-885716cf446f
+
+
+###
+// get total user
+GET http://localhost:3002/users/total
