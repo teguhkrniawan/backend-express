@@ -17,9 +17,9 @@ const store = new sessionStore({
     db: db
 });
 
-// (async() => {
-//     await db.sync();
-// })();
+(async() => {
+    await db.sync();
+})();
 
 // session
 app.use(session({
@@ -53,7 +53,7 @@ app.use(ProductRoute);
 app.use(AuthRoute);
 
 // session store ke db
-// store.sync();
+store.sync();
 
 app.listen(process.env.APP_PORT, () => {
     console.log('Server backend sedang running...')
